@@ -19,42 +19,41 @@ const Settings: React.FC<SettingsProps> = ({ onSave }) => {
   };
 
   return (
-    <div className="p-8 bg-white rounded-3xl shadow-xl w-full max-w-sm mx-auto animate-in fade-in zoom-in duration-300">
-      <h2 className="text-2xl font-bold mb-6 text-orange-600 text-center">基础工资配置</h2>
-      <p className="text-sm text-gray-500 mb-6 text-center">为了计算你到底多贵，我们需要一点点信息...</p>
+    <div className="p-8 bg-white rounded-3xl shadow-xl w-full max-w-sm mx-auto animate-in fade-in zoom-in duration-300 border border-slate-100">
+      <h2 className="text-2xl font-black mb-6 text-slate-800 text-center font-outfit uppercase tracking-tight">配置你的身价</h2>
+      <p className="text-sm text-slate-400 mb-6 text-center font-medium">量化生命价值的第一步...</p>
       
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">月薪 (¥)</label>
+          <label className="block text-xs font-black text-slate-400 uppercase tracking-widest mb-2">月薪 (到手金额 ¥)</label>
           <input
             type="number"
             value={salary}
             onChange={(e) => setSalary(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-400 text-lg"
-            placeholder="例如: 20000"
+            className="w-full px-5 py-4 rounded-2xl border-2 border-slate-100 focus:border-indigo-400 focus:outline-none text-slate-950 text-2xl font-black font-outfit transition-all placeholder-slate-300 bg-slate-50/30"
+            placeholder="20000"
             required
           />
-          <p className="mt-1 text-xs text-gray-400">税前税后随你，别太认真。</p>
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">标准工时 (h)</label>
+          <label className="block text-xs font-black text-slate-400 uppercase tracking-widest mb-2">每日法定工时 (h)</label>
           <input
             type="number"
             step="0.5"
             value={hours}
             onChange={(e) => setHours(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-400 text-lg"
-            placeholder="通常是 8"
+            className="w-full px-5 py-4 rounded-2xl border-2 border-slate-100 focus:border-indigo-400 focus:outline-none text-slate-950 text-2xl font-black font-outfit transition-all placeholder-slate-300 bg-slate-50/30"
+            placeholder="8"
             required
           />
         </div>
 
         <button
           type="submit"
-          className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-xl shadow-lg transition-all active:scale-95"
+          className="w-full bg-slate-900 hover:bg-black text-white font-black py-5 rounded-2xl shadow-xl transition-all active:scale-95 uppercase tracking-widest text-sm"
         >
-          确定，去赚钱
+          确定，开始打工
         </button>
       </form>
     </div>

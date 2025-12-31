@@ -4,39 +4,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>摸鱼计时器 - 牛马的财富自由之路</title>
+    <title>牛马身价计算器 - 质感牛马版</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=Outfit:wght@400;700;900&family=Noto+Sans+SC:wght@300;500;900&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-color: #F8F7F2;
+            --accent-red: #FF4757;
+            --accent-green: #2ED573;
+            --accent-blue: #1E90FF;
+            --text-dark: #2F3542;
+        }
         body {
             font-family: 'Noto Sans SC', sans-serif;
-            background-color: #FFF9F0;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
             overflow: hidden;
         }
-        .font-zcool {
-            font-family: 'ZCOOL+XiaoWei', serif;
-        }
-        @keyframes coin-drop {
-            0% { transform: translateY(-100px) rotate(0deg); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        .font-zcool { font-family: 'ZCOOL+XiaoWei', serif; }
+        .font-outfit { font-family: 'Outfit', sans-serif; }
+        
+        @keyframes coin-erupt {
+            0% { transform: translateY(-10vh) scale(0.5) rotate(0deg); opacity: 0; }
+            20% { opacity: 1; transform: translateY(10vh) scale(1.2) rotate(45deg); }
+            100% { transform: translateY(110vh) scale(1) rotate(720deg); opacity: 0.8; }
         }
         .coin-particle {
             position: absolute;
-            animation: coin-drop 2s linear forwards;
+            animation: coin-erupt 2.5s cubic-bezier(.17,.67,.83,.67) forwards;
             pointer-events: none;
             z-index: 5;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
         }
-        .bounce-in {
-            animation: bounceIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        
+        @keyframes toilet-vibe {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(-5deg); }
+            75% { transform: translateY(-5px) rotate(5deg); }
         }
-        @keyframes bounceIn {
-            0% { transform: scale(0.3); opacity: 0; }
-            50% { transform: scale(1.05); }
-            70% { transform: scale(0.9); }
-            100% { transform: scale(1); opacity: 1; }
+        .slacker-icon {
+            animation: toilet-vibe 2s ease-in-out infinite;
         }
+
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .neo-shadow {
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+        }
+        
+        .timer-glow-work { box-shadow: 0 0 40px rgba(46, 213, 115, 0.15); }
+        .timer-glow-slack { box-shadow: 0 0 40px rgba(30, 144, 255, 0.15); }
     </style>
 <script type="importmap">
 {
